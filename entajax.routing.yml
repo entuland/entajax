@@ -1,0 +1,7 @@
+entajax.form:
+  path: '/entajax/selects'
+  defaults:
+    _form:  '\Drupal\entajax\Form\Selects'
+    _title: 'Dependent additional selects'
+  requirements:
+    _permission: 'access content'

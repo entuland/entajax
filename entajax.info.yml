@@ -1,0 +1,6 @@
+name: Entuland's AJAX Module Samples
+description: AJAX Form alteration Samples
+package: Custom
+
+type: module
+core: 8.x
