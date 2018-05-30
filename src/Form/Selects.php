@@ -9,17 +9,15 @@ class Selects extends FormBase {
 
   // buildForm() gets calleb by default
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $select_a = $form_state->getValue(['select_wrapper', 'select_a'], 'none');
-    $select_b = $form_state->getValue(['select_wrapper', 'select_b'], 'none');
-    $select_c = $form_state->getValue(['select_wrapper', 'select_c'], 'none');
+    $select_a = $form_state->getValue('select_a', 'none');
+    $select_b = $form_state->getValue('select_b', 'none');
+    $select_c = $form_state->getValue('select_c', 'none');
     
     self::dump('buildForm', [
       'select_a' => $select_a,
       'select_b' => $select_b,
       'select_c' => $select_c,
     ]);
-    
-    $form['#tree'] = TRUE;
 
     // all selects will be children of this node, which will be replaced in its entirety by selectCallback()
     $form['select_wrapper'] = [
@@ -116,9 +114,9 @@ class Selects extends FormBase {
   
   // submitForm() gets called by default
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $select_a = $form_state->getValue(['select_wrapper', 'select_a'], 'none');
-    $select_b = $form_state->getValue(['select_wrapper', 'select_b'], 'none');
-    $select_c = $form_state->getValue(['select_wrapper', 'select_c'], 'none');
+    $select_a = $form_state->getValue('select_a', 'none');
+    $select_b = $form_state->getValue('select_b', 'none');
+    $select_c = $form_state->getValue('select_c', 'none');
     
     self::dump('submitForm', [
       'select_a' => $select_a,
